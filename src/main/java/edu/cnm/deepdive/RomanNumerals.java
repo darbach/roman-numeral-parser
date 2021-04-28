@@ -57,6 +57,7 @@ public abstract class RomanNumerals {
     char[] working = romanNumeral.toCharArray();
     int tally = 0;
     for (int i = 0; i < working.length; i++) {
+      // FIXME debugger will not step past following line
       int current = values.get(working[i]);
       if (i + 1 < working.length) {
         int next = values.get(working[i + 1]);
