@@ -4,17 +4,17 @@ import java.util.Map;
 
 public abstract class RomanNumerals {
 
-  private static final Map<String, Integer> values;
+  private static final Map<Character, Integer> values;
 
   static {
     values = Map.of(
-        "I", 1,
-        "V", 5,
-        "X", 10,
-        "L", 50,
-        "C", 100,
-        "D", 500,
-        "M", 1_000);
+        'I', 1,
+        'V', 5,
+        'X', 10,
+        'L', 50,
+        'C', 100,
+        'D', 500,
+        'M', 1_000);
   }
 
   /**
@@ -57,7 +57,6 @@ public abstract class RomanNumerals {
     char[] working = romanNumeral.toCharArray();
     int tally = 0;
     for (int i = 0; i < working.length; i++) {
-      // FIXME debugger will not step past following line
       int current = values.get(working[i]);
       if (i + 1 < working.length) {
         int next = values.get(working[i + 1]);
